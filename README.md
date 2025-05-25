@@ -218,7 +218,6 @@ Fitur yang korelasinya relatif “paling tinggi” terhadap Potability adalah:
 
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 Berikut ini adalah tahapan-tahapan yang dilakukan saat data preparation:
 - **Mengganti Missing Values dengan nilai rata-rata**
 Pada tahap pertama ini, kita akn  menggantikan nilai hilang (missing values) pada kolom numerik dengan nilai rata-rata kolom tersebut.Data yang memiliki missing values dapat mengganggu proses pelatihan model karena kebanyakan algoritma tidak bisa menangani nilai NaN. Menggunakan nilai rata-rata adalah teknik yang digunakan untuk menjaga distribusi data dan menghindari penghapusan informasi berharga.
