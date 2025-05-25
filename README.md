@@ -188,16 +188,16 @@ Dari gambar diatas dapat dilihat bahwa semua kolom memiliki outlier,untuk kolom 
 ![Univariate](images/univariate.png)
 
 Berdasarkan data distribusi numerik diatas kita mendapat informasi sebagai berikut:
-1.`pH`:Memiliki distribusi yang mendekati normal dengan rata-rata berada disekitar angka 7,yang merupakan nilai netral untuk skala pH.
-2.`Hardness`:Memiliki distribusi yang mendekati normal,dengan konsentrasi nilai berada pada kisaran 180-200.
-3.`Solids`:Memiliki distribusi yang miring ke kanan(right-skewed).Akumulasi data cenderung pada nilai yang lebih rendah,dan terdapat beberapa nilai ekstrem dengan kadar mineral yang tinggi.
-4.`Chloramines`:Memiliki distribusi yang hampir simetris dan mendekati normal.Nilai-nilainya sebagian besar berkisar antara 5-9,yang menunjukkan kebanyakan air mengandung campuran klorin dan amonia yang tinggi.
-5.`Sulfate`:Memiliki distribusi yang miring ke kanan(positive skewed),dan sebagian besar data terkosentrasi di antara 200-350.Yang mana ini berarti kebanyakan air memiliki senyawa yang lebih besar dibandingkan normalnya.
-6.`Conductivity`: Memiliki distribusi yang miring ke kanan,dan sebagian besar data terpusat di antara 300-500.Ini menandakan kebanyakan air masih dibatas WHO walaupun ada juga sebagian besar yang sudah melewati batas.
-7.`Organic_carbon`:Memiliki distribusi yang mendekati normal dengan pusat distribusi nilai diantara 14-16 yang mana ini cukup berbahaya jika dibandingkan batas aman.
-8.`Trihalomethanes`:Memiliki distribusi yang cenderung normal,meskipun sedikit cenderung ke kanan.Kebanyakan nilai berkumpul diantara 40-80.Menandakan kebanyakan air masih dalam batas aman.
-9.`Turbidity`:Memiliki distribusi yang cenderung normal juga dengan kebanyakan data berpusat di kisaran 3,5-4,5.Ini menandakan bahwa kejernihan airnya masih dalam batas WHO.
-10.`Potability`:Memiliki Distribusi yang sangat tidak seimbang dengan kebanyakan data menujukkan air yang tidak dapat diminum **0** dibandingkan yang layak diminum **1** .
+1. `pH`:Memiliki distribusi yang mendekati normal dengan rata-rata berada disekitar angka 7,yang merupakan nilai netral untuk skala pH.
+2. `Hardness`:Memiliki distribusi yang mendekati normal,dengan konsentrasi nilai berada pada kisaran 180-200.
+3. `Solids`:Memiliki distribusi yang miring ke kanan(right-skewed).Akumulasi data cenderung pada nilai yang lebih rendah,dan terdapat beberapa nilai ekstrem dengan kadar mineral yang tinggi.
+4. `Chloramines`:Memiliki distribusi yang hampir simetris dan mendekati normal.Nilai-nilainya sebagian besar berkisar antara 5-9,yang menunjukkan kebanyakan air mengandung campuran klorin dan amonia yang tinggi.
+5. `Sulfate`:Memiliki distribusi yang miring ke kanan(positive skewed),dan sebagian besar data terkosentrasi di antara 200-350.Yang mana ini berarti kebanyakan air memiliki senyawa yang lebih besar dibandingkan normalnya.
+6. `Conductivity`: Memiliki distribusi yang miring ke kanan,dan sebagian besar data terpusat di antara 300-500.Ini menandakan kebanyakan air masih dibatas WHO walaupun ada juga sebagian besar yang sudah melewati batas.
+7. `Organic_carbon`:Memiliki distribusi yang mendekati normal dengan pusat distribusi nilai diantara 14-16 yang mana ini cukup berbahaya jika dibandingkan batas aman.
+8. `Trihalomethanes`:Memiliki distribusi yang cenderung normal,meskipun sedikit cenderung ke kanan.Kebanyakan nilai berkumpul diantara 40-80.Menandakan kebanyakan air masih dalam batas aman.
+9. `Turbidity`:Memiliki distribusi yang cenderung normal juga dengan kebanyakan data berpusat di kisaran 3,5-4,5.Ini menandakan bahwa kejernihan airnya masih dalam batas WHO.
+10. `Potability`:Memiliki Distribusi yang sangat tidak seimbang dengan kebanyakan data menujukkan air yang tidak dapat diminum **0** dibandingkan yang layak diminum **1** .
 
 ### EDA - Multivariate
 ![Multivariate-Pairplot](images/pairplot.png)
