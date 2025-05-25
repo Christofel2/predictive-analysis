@@ -10,7 +10,7 @@ Di Indonesia, permasalahan air bersih masih menjadi isu utama, terutama di wilay
 
 Permasalahan ini penting untuk diselesaikan karena menyangkut hak dasar manusia atas akses terhadap air bersih. Namun, pengujian kualitas air secara laboratorium sering kali memerlukan biaya tinggi dan waktu yang cukup lama. Oleh karena itu, dibutuhkan pendekatan yang efisien dan akurat, seperti pemanfaatan model machine learning, untuk memprediksi kelayakan air minum berdasarkan parameter-parameter fisik dan kimia yang dapat diukur secara langsung.
 
-Berbagai penelitian telah dilakukan untuk mengidentifikasi parameter-parameter kualitas air, sebagaimana dijelaskan oleh Ansnawi et al. [1](https://www.researchgate.net/publication/374118371_Parameter_Kualitas_Air), yang membagi parameter menjadi tiga kategori utama: fisika (misalnya pH, turbidity), kimia (misalnya chloramines, sulfate), dan biologi. Di sisi lain, pendekatan berbasis machine learning telah terbukti efektif dalam mengklasifikasikan kualitas air. Shams et al. [2](https://link.springer.com/article/10.1007/s11042-023-16737-4#Sec17), dalam studi terbarunya, mengembangkan model prediksi potabilitas air menggunakan berbagai algoritma klasifikasi seperti Random Forest, XGBoost, dan AdaBoost, dengan bantuan metode Grid Search untuk optimasi performa.
+Berbagai penelitian telah dilakukan untuk mengidentifikasi parameter-parameter kualitas air, sebagaimana dijelaskan oleh Ansnawi et al. [[1]](https://www.researchgate.net/publication/374118371_Parameter_Kualitas_Air), yang membagi parameter menjadi tiga kategori utama: fisika (misalnya pH, turbidity), kimia (misalnya chloramines, sulfate), dan biologi. Di sisi lain, pendekatan berbasis machine learning telah terbukti efektif dalam mengklasifikasikan kualitas air. Shams et al. [[2]](https://link.springer.com/article/10.1007/s11042-023-16737-4#Sec17), dalam studi terbarunya, mengembangkan model prediksi potabilitas air menggunakan berbagai algoritma klasifikasi seperti Random Forest, XGBoost, dan AdaBoost, dengan bantuan metode Grid Search untuk optimasi performa.
 
 Dengan adanya model prediktif berbasis machine learning, instansi pemerintah, perusahaan air minum, dan masyarakat dapat memperoleh alat bantu yang cepat dan murah untuk menilai kelayakan air. Hal ini diharapkan dapat mengurangi risiko kesehatan akibat konsumsi air yang tidak layak serta membantu pengambilan keputusan berbasis data dalam pengelolaan sumber daya air. 
 
@@ -165,7 +165,7 @@ Turbidity            0
 Potability           0
 dtype: int64
 ```
-Setelah dilakukan pengecekan ternyata terdapat cukup banyak missing value di kolom ph,Sulafte dan Trihalomethanes.Missing values ini akan ditangani nantinya di Data preparation dengan melakukan inputasi menggunakan nilai rata-rata masing-masing kolom agar kita tidak kehilangan terlalu banyak data.
+Setelah dilakukan pengecekan ternyata terdapat cukup banyak missing value di kolom ph,Sulafte dan Trihalomethanes.Missing values ini akan ditangani nantinya di Data preparation dengan melakukan imputasi menggunakan nilai rata-rata masing-masing kolom agar kita tidak kehilangan terlalu banyak data.
 
 5.Cek Duplikat Data
 ```python
@@ -218,6 +218,7 @@ Fitur yang korelasinya relatif “paling tinggi” terhadap Potability adalah:
 
 
 ## Data Preparation
+Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 Berikut ini adalah tahapan-tahapan yang dilakukan saat data preparation:
 - **Mengganti Missing Values dengan nilai rata-rata**
 Pada tahap pertama ini, kita akn  menggantikan nilai hilang (missing values) pada kolom numerik dengan nilai rata-rata kolom tersebut.Data yang memiliki missing values dapat mengganggu proses pelatihan model karena kebanyakan algoritma tidak bisa menangani nilai NaN. Menggunakan nilai rata-rata adalah teknik yang digunakan untuk menjaga distribusi data dan menghindari penghapusan informasi berharga.
@@ -322,8 +323,8 @@ svm_model.fit(X_train_scaled, y_train)
 ```
 
 Alasan Pemilihan Parameter:
-- kernel='rbf': Kernel RBF dipilih karena mampu menangkap relasi non-linear antar fitur, yang umum terjadi dalam data kimia seperti kualitas air.
-- random_state=42: Untuk menjaga konsistensi hasil validasi (meskipun tidak semua kernel SVM tergantung pada random seed).
+- kernel='rbf': Kernel RBF dipilih karena mampu menangkap relasi non-linear antar fitur, yang mana sesuai dengan hasil multivariate.
+- random_state=42: Untuk menjaga konsistensi hasil validasi.
 
 Hyperparameter yang diberikan setelah GridSearch:
 ```
@@ -340,7 +341,7 @@ Kekurangan:
 - Pemilihan parameter seperti C dan gamma sangat berpengaruh terhadap performa.
 
 ### 3. XGBoost Classifier
-XGBoost (Extreme Gradient Boosting) merupakan algoritma boosting berbasis gradient descent yang sangat efisien dan sering digunakan dalam kompetisi data science. Ia memperbaiki kesalahan prediksi dari pohon sebelumnya secara iteratif.
+XGBoost (Extreme Gradient Boosting) merupakan algoritma boosting berbasis gradient descent yang sangat efisien, algoritma ini memperbaiki kesalahan prediksi dari pohon sebelumnya secara iteratif.
 
 ```python
 # Initialize the model
@@ -368,6 +369,8 @@ Kekurangan:
 - Memerlukan tuning parameter untuk hasil optimal (lebih kompleks).
 - Interpretasi hasil lebih sulit dibanding model linier atau pohon tunggal.
 - Bisa overfitting jika terlalu banyak iterasi dan model terlalu kompleks tanpa regularisasi yang cukup.
+
+Dari Ketiga model ini model yang terbaik adalah model XGBoost setelah melakukan Hyperparameter Tuning,dipilih sebagai model terbaik karena memiliki akurasi yang paling tinggi diantara model yang lainnya.
 
 
 ## Evaluation
